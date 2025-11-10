@@ -1,5 +1,4 @@
 import type { MouseEvent, ReactNode } from "react";
-import React from "react";
 
 export enum BUTTON_VARIANTS {
   PRIMARY = "primary",
@@ -39,9 +38,7 @@ const Button = ({
   const className = `rounded p-2 ${ButtonVariantStyling[variant]} ${ButtonSizeStyling[size]}`;
 
   console.log("hello from CDN");
-  React.useEffect(() => {
-    updateModel({ data: [{ id: "hello", data: "smurfs" }] });
-  }, []);
+  updateModel({ data: [{ id: "hello", data: "smurfs" }] });
 
   return (
     <button onClick={onClick} className={className}>

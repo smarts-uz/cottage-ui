@@ -31,7 +31,7 @@ describe(`Component: ${Button.name}`, () => {
   });
 
   it("should render large button", () => {
-    const { container } = render(<Button size={BUTTON_SIZES.LARGE}>My button</Button>);
+    // const { container } = render(<Button size={BUTTON_SIZES.LARGE}>My button</Button>);
     const button = screen.getByRole('button')
 
     expect(button).toMatchInlineSnapshot(`
