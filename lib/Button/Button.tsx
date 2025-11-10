@@ -26,6 +26,8 @@ interface ButtonProps {
   variant?: BUTTON_VARIANTS;
   size?: BUTTON_SIZES;
   updateModel?: any;
+  useState?: any;
+  useEffect?:any;
 }
 
 const Button = ({
@@ -34,14 +36,16 @@ const Button = ({
   variant = BUTTON_VARIANTS.DEFAULT,
   size = BUTTON_SIZES.DEFAULT,
   updateModel = () => null,
+  useState= () => null,
+  useEffect= () => null,
 }: ButtonProps): ReactNode => {
-  const [counter, setCounter] = React.useState(0);
+  const [counter, setCounter] = useState(0);
   const className = `rounded p-2 ${ButtonVariantStyling[variant]} ${ButtonSizeStyling[size]}`;
 
   console.log("hello from CDN", counter);
-  React.useEffect(() => {
+  useEffect(() => {
     updateModel({ data: [{ id: "hello", data: "smurfs" }] });
-    setCounter((prev) => prev + 1);
+    setCounter((prev: number) => prev + 1);
   }, []);
 
   return (
