@@ -1,5 +1,5 @@
 import type { MouseEvent, ReactNode } from "react";
-import { useEffect, useState } from "react";
+import React from "react";
 
 export enum BUTTON_VARIANTS {
   PRIMARY = "primary",
@@ -36,11 +36,11 @@ const Button = ({
   size = BUTTON_SIZES.DEFAULT,
   updateModel = () => null,
 }: ButtonProps): ReactNode => {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = React.useState(0);
   const className = `rounded p-2 ${ButtonVariantStyling[variant]} ${ButtonSizeStyling[size]}`;
 
   console.log("hello from CDN", counter);
-  useEffect(() => {
+  React.useEffect(() => {
     updateModel({ data: [{ id: "hello", data: "smurfs" }] });
     setCounter((prev: number) => prev + 1);
   }, []);
