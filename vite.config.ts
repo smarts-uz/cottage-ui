@@ -18,7 +18,7 @@ export default defineConfig({
     // bundler options
     // externalize react-related imports
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime"],
+      // external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
         globals: {
           react: "React",
